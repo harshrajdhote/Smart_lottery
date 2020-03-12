@@ -14,7 +14,7 @@ const deploy = async () =>{
     //console.log("adss")
     console.log("Attempting to deploy from account",accounts[0])
     const result = await new web3.eth.Contract(JSON.parse(interface))
-    .deploy({data : '0x' + bytecode,arguments:['Hi there!']})//0x not mentioned in the video
+    .deploy({data : '0x' + bytecode})//0x not mentioned in the video
     .send({gas : '1000000',from : accounts[0]}); //max gas for given transaction
    console.log('Contract deployed to',result.options.address);
 };
